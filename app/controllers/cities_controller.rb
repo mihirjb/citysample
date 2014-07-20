@@ -62,9 +62,11 @@ class CitiesController < ApplicationController
   end
   
   def cityfromcountry
-    @country - params[:country]
+    @country = params[:country]
     @cities = City.where(:country => "#{@country}")
-    
+    respond_to do |format|
+    format.json { render json: @cities}
+  end
   end
 
   private
