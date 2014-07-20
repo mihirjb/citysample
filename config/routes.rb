@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
    root 'cities#index'
+    get 'cities/cityfromcountry' => 'cities#cityfromcountry'
   
   resources :cities
 

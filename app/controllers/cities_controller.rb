@@ -60,6 +60,12 @@ class CitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def cityfromcountry
+    @country - params[:country]
+    @cities = City.where(:country => "#{@country}")
+    
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
